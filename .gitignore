@@ -1,0 +1,14 @@
+auto-save-list/
+elpa/
+eshell/
+emacs-backup/
+projectile*
+.mc-lists.el
+.cask
+*.dat
+ido.last
+request/
+smex-items
+url/
+creds.el
+files/emacs.d/session*
