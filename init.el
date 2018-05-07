@@ -8,7 +8,7 @@
 
 (load-file "~/.emacs.d/gimme-cat.el")
 (load-file "~/.cask/cask.el")
-(load-file "~/.emacs.d/creds.el")
+;(load-file "~/.emacs.d/creds.el")
 (require 'cask)
 (cask-initialize)
 (pallet-mode t)
