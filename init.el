@@ -1,14 +1,9 @@
 (require 'package) ;; You might already have this line
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/"))
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib…
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
 
 (load-file "~/.emacs.d/gimme-cat.el")
 (load-file "~/.cask/cask.el")
-;(load-file "~/.emacs.d/creds.el")
+(load-file "~/.emacs.d/creds.el")
 (require 'cask)
 (cask-initialize)
 (pallet-mode t)
@@ -26,8 +21,8 @@
 (add-hook 'after-make-frame-functions 'my-frame-config)
 
 ;; MAIN Configs
-;(evil-mode 1)
-;(evil-set-initial-state 'bs-mode 'emacs)
+(evil-mode 1)
+(evil-set-initial-state 'bs-mode 'emacs)
 (require 'spaceline-config)
 (setq powerline-default-separator 'wave)
 (powerline-default-theme)
@@ -44,8 +39,8 @@
 (global-auto-complete-mode t)
 (setq inhibit-splash-screen t)
 (setq-default indent-tabs-mode nil)
-(setq multi-term-program-switches "--login")
-(setq sunshine-location "Seattle,WA")
+(setq create-lockfiles nil)
+
 (setq initial-major-mode (quote text-mode))
 (global-linum-mode t)
 (setq linum-format " %d  ")
@@ -107,7 +102,7 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (js-auto-beautify jsx-mode solidity-mode flycheck virtualenvwrapper markdown-mode vue-html-mode vue-mode org-jira spotify evil rspec-mode powerline-evil spaceline helm mo-git-blame typescript-mode habitica yaml-mode web-mode web-beautify vagrant twittering-mode sunshine sublime-themes spacemacs-theme solarized-theme smex slim-mode seti-theme sass-mode rvm rainbow-delimiters racket-mode projectile-rails popwin paredit pallet nyan-mode neotree multiple-cursors multi-term monokai-theme magit less-css-mode keyfreq indent-guide grizzl git-gutter feature-mode evil-visual-mark-mode ensime enh-ruby-mode elpy dired+ darcula-theme coffee-mode beeminder auto-complete ansible ample-theme alchemist)))
+    (ember-mode helm-dash solidity-mode virtualenvwrapper markdown-mode vue-html-mode vue-mode org-jira spotify evil rspec-mode helm mo-git-blame typescript-mode habitica yaml-mode web-mode web-beautify vagrant twittering-mode sunshine sublime-themes spacemacs-theme solarized-theme smex slim-mode seti-theme sass-mode rvm rainbow-delimiters racket-mode projectile-rails popwin paredit pallet nyan-mode neotree multiple-cursors multi-term monokai-theme magit less-css-mode keyfreq indent-guide grizzl git-gutter feature-mode evil-visual-mark-mode ensime enh-ruby-mode elpy dired+ darcula-theme coffee-mode beeminder auto-complete ansible ample-theme alchemist)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
@@ -146,31 +141,9 @@
 (setq coffee-tab-width 2)
 
 ;; Indent guide
-(indent-guide-global-mode)
-(setq indent-guide-recursive t)
-(setq indent-guide-char "|")
-
-;; Popwin
-(autoload 'popwin-mode "popwin" nil t)
-(popwin-mode 1)
-
-;; popwin settings
-(setq popwin:special-display-config
-      '(("*Help*" :height 30 :stick t)
-        ("*Completions*" :noselect t)
-        ("*compilation*" :noselect t)
-        ("*Messages*")
-        ("*Occur*" :noselect t)
-        ("*magit: emacs*" :noselect t :height 20 :width 80)
-        ("*magit-commit*" :noselect t :height 20 :width 80)
-        ("COMMIT_EDITMSG" :noselect t :height 5 :width 80)
-        ("*magit-diff*" :noselect t :height 30 :width 80)
-        ("*magit-edit-log*" :noselect t :height 15 :width 80)
-        ("*magit-process*" :noselect t :height 15 :width 80)
-        ;;("*eshell*" :height 20)
-        ("*Kill Ring*" :height 30)
-        ("*Compile-Log" :height 20 :stick t)
-        ))
+;;(indent-guide-global-mode)
+;;(setq indent-guide-recursive t)
+;;(setq indent-guide-char "|")
 
 ;; Language Mode Settings
 (add-to-list 'auto-mode-alist '("\\.rkt$" . racket-mode))
@@ -196,17 +169,6 @@
 (keyfreq-mode 1)
 (keyfreq-autosave-mode 1)
 
-;; Project Management
-(projectile-global-mode)
-(projectile-rails-global-mode)
-(setq projectile-completion-system 'grizzl)
-
-;; Paren stuff
-(add-hook 'emacs-lisp-mode-hook 'paredit-mode)
-(rainbow-delimiters-mode)
-(show-paren-mode 1)
-(electric-pair-mode 1)
-
 ;; Perl stuff
 (eval-after-load 'cperl-mode
   '(progn
@@ -224,6 +186,11 @@
 ;; the environment variable `WORKON_HOME` points to the right place
 (setq venv-location "/Users/icole/.virtualenvs")
 
+;; Project Management
+(projectile-global-mode)
+(projectile-rails-global-mode)
+(require 'helm-projectile)
+(helm-projectile-on)
 
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;; Custom Functions:
