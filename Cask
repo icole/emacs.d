@@ -26,6 +26,7 @@
 (depends-on "git-gutter")
 (depends-on "habitica")
 (depends-on "haml-mode")
+(depends-on "handlebars-mode")
 (depends-on "helm")
 (depends-on "helm-dash")
 (depends-on "helm-projectile")

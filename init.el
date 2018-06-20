@@ -102,7 +102,7 @@
     ("#dc322f" "#cb4b16" "#b58900" "#546E00" "#B4C342" "#00629D" "#2aa198" "#d33682" "#6c71c4")))
  '(package-selected-packages
    (quote
-    (ember-mode helm-dash solidity-mode virtualenvwrapper markdown-mode vue-html-mode vue-mode org-jira spotify evil rspec-mode helm mo-git-blame typescript-mode habitica yaml-mode web-mode web-beautify vagrant twittering-mode sunshine sublime-themes spacemacs-theme solarized-theme smex slim-mode seti-theme sass-mode rvm rainbow-delimiters racket-mode projectile-rails popwin paredit pallet nyan-mode neotree multiple-cursors multi-term monokai-theme magit less-css-mode keyfreq indent-guide grizzl git-gutter feature-mode evil-visual-mark-mode ensime enh-ruby-mode elpy dired+ darcula-theme coffee-mode beeminder auto-complete ansible ample-theme alchemist)))
+    (handlebars-mode ember-mode helm-dash solidity-mode virtualenvwrapper markdown-mode vue-html-mode vue-mode org-jira spotify evil rspec-mode helm mo-git-blame typescript-mode habitica yaml-mode web-mode web-beautify vagrant twittering-mode sunshine sublime-themes spacemacs-theme solarized-theme smex slim-mode seti-theme sass-mode rvm rainbow-delimiters racket-mode projectile-rails popwin paredit pallet nyan-mode neotree multiple-cursors multi-term monokai-theme magit less-css-mode keyfreq indent-guide grizzl git-gutter feature-mode evil-visual-mark-mode ensime enh-ruby-mode elpy dired+ darcula-theme coffee-mode beeminder auto-complete ansible ample-theme alchemist)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(smartrep-mode-line-active-bg (solarized-color-blend "#859900" "#073642" 0.2))
@@ -161,6 +161,7 @@
 (add-to-list 'auto-mode-alist '("\\.ts$" . typescript-mode))
 (add-to-list 'auto-mode-alist '("\\.vue$" . vue-mode))
 (add-to-list 'auto-mode-alist '("\\.sol$" . solidity-mode))
+(add-to-list 'auto-mode-alist '("\\.hbs$" . handlebars-mode))
 (add-hook 'racket-mode-hook
           '(lambda ()
              (define-key racket-mode-map (kbd "C-c r") 'racket-run)))

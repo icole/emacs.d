@@ -12,3 +12,4 @@ smex-items
 url/
 creds.el
 files/emacs.d/session*
+session.*
