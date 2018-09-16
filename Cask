@@ -30,6 +30,7 @@
 (depends-on "helm")
 (depends-on "helm-dash")
 (depends-on "helm-projectile")
+(depends-on "ibuffer-vc")
 (depends-on "inf-ruby")
 (depends-on "inflections")
 (depends-on "keyfreq")
