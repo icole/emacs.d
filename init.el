@@ -6,6 +6,7 @@
 (load-file "~/.emacs.d/creds.el")
 (require 'cask)
 (cask-initialize)
+(require 'pallet)
 (pallet-mode t)
 (autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for ruby files" t)
 (add-to-list 'custom-theme-load-path (expand-file-name "~/.emacs.d/themes/"))
